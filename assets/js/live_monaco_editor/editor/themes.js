@@ -6,17 +6,17 @@
 // We color graded the comment so it has AA accessibility and
 // then similarly scaled the default font.
 const colors = {
-  background: "#282c34",
-  default: "#c4cad6",
-  lightRed: "#e06c75",
-  blue: "#61afef",
-  gray: "#8c92a3",
-  green: "#98c379",
-  purple: "#c678dd",
-  red: "#be5046",
-  teal: "#56b6c2",
-  peach: "#d19a66",
-}
+  background: "hsla(224, 71%, 4%, 1)", // Tailwind dark mode base-100
+  default: "hsla(224, 71%, 80%, 1)",   // Tailwind dark mode base-content
+  lightRed: "hsla(352, 87%, 60%, 1)",  // Tailwind dark mode error
+  blue: "hsla(223, 68%, 62%, 1)",      // Tailwind dark mode secondary
+  gray: "hsla(224, 71%, 6%, 1)",       // Tailwind dark mode neutral
+  green: "hsla(146, 66%, 45%, 1)",     // Tailwind dark mode success
+  purple: "hsla(223, 68%, 37%, 1)",    // Tailwind dark mode primary
+  red: "hsla(352, 87%, 60%, 1)",       // Tailwind dark mode error
+  teal: "rgb(0, 20, 78)",              // Tailwind dark mode accent
+  peach: "hsla(44, 100%, 53%, 1)",     // Tailwind dark mode warning
+};
 
 const rules = (colors) => [
   { token: "", foreground: colors.default },
@@ -57,7 +57,7 @@ const rules = (colors) => [
 
   // SQL specific
   { token: "operator.sql", foreground: colors.purple },
-]
+];
 
 const theme = {
   base: "vs-dark",
@@ -66,18 +66,18 @@ const theme = {
   colors: {
     "editor.background": colors.background,
     "editor.foreground": colors.default,
-    "editorLineNumber.foreground": "#636d83",
-    "editorCursor.foreground": "#636d83",
-    "editor.selectionBackground": "#3e4451",
+    "editorLineNumber.foreground": "hsla(224, 71%, 6%, 1)", // Tailwind dark mode neutral
+    "editorCursor.foreground": "hsla(224, 7%, 90%, 1)",      // Tailwind dark mode neutral-content
+    "editor.selectionBackground": "hsla(224, 71%, 5%, 1)",  // Tailwind dark mode base-200
     "editor.findMatchHighlightBackground": "#528bff3d",
     "editorSuggestWidget.background": "#21252b",
-    "editorSuggestWidget.border": "#181a1f",
-    "editorSuggestWidget.selectedBackground": "#2c313a",
-    "input.background": "#1b1d23",
-    "input.border": "#181a1f",
-    "editorBracketMatch.border": "#282c34",
-    "editorBracketMatch.background": "#3e4451",
+    "editorSuggestWidget.border": "hsla(224, 71%, 6%, 1)",
+    "editorSuggestWidget.selectedBackground": "hsla(225, 67%, 6%, 1)",
+    "input.background": "hsla(224, 71%, 5%, 1)",            // Tailwind dark mode base-200
+    "input.border": "hsla(225, 67%, 6%, 1)",                // Tailwind dark mode base-300
+    "editorBracketMatch.border": colors.background,
+    "editorBracketMatch.background": "hsla(224, 71%, 5%, 1)", // Tailwind dark mode base-200
   },
-}
+};
 
-export { theme }
+export { theme };
